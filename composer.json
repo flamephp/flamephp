@@ -1,0 +1,44 @@
+{
+    "name": "flamephp/flamephp",
+    "type": "project",
+    "description": "The Flame PHP Framework.",
+    "keywords": ["flame", "php8", "mysql", "redis"],
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.1",
+        "flamephp/framework": "^1.0.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.9",
+        "phpunit/phpunit": "^10.1",
+        "zircote/swagger-php": "^4.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Flame\\Support\\ComposerScripts::postAutoloadDump"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
