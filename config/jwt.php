@@ -1,6 +1,9 @@
 <?php
 
+use Flame\Auth\JWT;
+
 return [
+    'algorithm' => JWT::ALGORITHM_HS256,
     'key' => env('APP_KEY', md5(__DIR__)),
     'payload' => [
         // 签发者

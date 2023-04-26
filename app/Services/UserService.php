@@ -7,7 +7,7 @@ namespace App\Services;
 use App\Entities\User;
 use App\Repositories\UserRepository;
 
-class UserService extends UserRepository
+class UserService
 {
     
 }
