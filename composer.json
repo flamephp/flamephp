@@ -6,7 +6,7 @@
     "license": "Apache-2.0",
     "require": {
         "php": "^8.1",
-        "flamephp/framework": "^1.0.0"
+        "flamephp/framework": "^1.0.2"
     },
     "require-dev": {
         "laravel/pint": "^1.9",
