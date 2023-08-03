@@ -24,7 +24,7 @@ final class CreateUserTable extends AbstractMigration
             ->addColumn(Column::dateTime('created_time')->setNull(false)->setComment('创建时间'))
             ->addColumn(Column::dateTime('updated_time')->setNullable()->setComment('更新时间'))
             ->addColumn(Column::dateTime('deleted_time')->setNullable()->setComment('删除时间'))
-            ->addIndex(['mobile'], ['unique' => true, 'name' => 'mobile'])
+            ->addIndex(['mobile', 'deleted_time'], ['unique' => true, 'name' => 'mobile'])
             ->create();
     }
 }

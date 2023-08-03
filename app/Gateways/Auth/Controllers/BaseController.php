@@ -12,8 +12,5 @@ use OpenApi\Attributes\Contact;
 #[OA\Server(url: 'http://flame.test/', description: '开发环境')]
 abstract class BaseController extends Controller
 {
-	public function index()
-	{
-		return $this->success('auth login api');
-	}
+	
 }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Gateways\Auth\Controllers;
 
 use App\Exceptions\CustomException;
-use Flame\Log;
-use Flame\Response;
+use Flame\Http\Response;
+use Flame\Log\Log;
 use OpenApi\Attributes as OA;
 use Throwable;
 
@@ -17,6 +17,6 @@ class LoginController extends BaseController
     #[OA\Response(response: 200, description: 'OK', content: new OA\JsonContent(ref: '#/components/schemas/LoginResponse'))]
     public function mobile(): Response
     {
-        
+        return $this->success('mobile login');
     }
 }
