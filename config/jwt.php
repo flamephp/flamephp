@@ -3,8 +3,11 @@
 use Flame\Auth\JWT;
 
 return [
+    // 签名算法
     'algorithm' => JWT::ALGORITHM_HS256,
+    // 钥匙
     'key' => env('APP_KEY', md5(__DIR__)),
+    // 荷载
     'payload' => [
         // 签发者
         'iss' => env('APP_URL', ''),

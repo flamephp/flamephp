@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 return [
     'paths' => [
-        'migrations' => '%%PHINX_CONFIG_DIR%%/database/migrations',
-        'seeds' => '%%PHINX_CONFIG_DIR%%/database/seeders',
+        'migrations' => base_path('database/migrations'),
+        'seeds' => base_path('database/seeders'),
     ],
     'environments' => [
         'default_migration_table' => 'migrations',

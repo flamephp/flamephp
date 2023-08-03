@@ -24,6 +24,7 @@ return [
             'params' => [],
             // 数据库编码默认采用utf8
             'charset' => env('DB_CHARSET', 'utf8mb4'),
+            'collation' => 'utf8mb4_unicode_ci',
             // 数据库表前缀
             'prefix' => env('DB_PREFIX', ''),
 
