@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use App\Contracts\CommonServiceInterface;
-use App\Contracts\CurdRepositoryInterface;
 use App\Exceptions\CustomException;
+use Focite\Contracts\CommonServiceInterface;
+use Focite\Contracts\CurdRepositoryInterface;
 
 /**
  * @method CurdRepositoryInterface getRepository()

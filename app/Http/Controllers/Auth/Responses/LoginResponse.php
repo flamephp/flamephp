@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Gateways\Auth\Responses;
+namespace App\Controllers\Auth\Responses;
 
 use Flame\Support\ArrayObject;
 use OpenApi\Attributes as OA;

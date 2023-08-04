@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Gateways\Auth\Services;
+namespace App\Controllers\Auth\Services;
 
 use App\Exceptions\CustomException;
 

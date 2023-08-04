@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Gateways\Auth\Controllers;
+namespace App\Controllers\Auth;
 
 use Flame\Routing\Controller;
 use OpenApi\Attributes as OA;

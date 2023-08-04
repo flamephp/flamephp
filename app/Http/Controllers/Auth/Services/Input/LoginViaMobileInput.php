@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Gateways\Auth\Services\Input;
+namespace App\Controllers\Auth\Services\Input;
 
 class LoginViaMobileInput
 {

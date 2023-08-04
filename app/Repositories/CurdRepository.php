@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Contracts\CurdRepositoryInterface;
 use Exception;
+use Flame\Contracts\CurdRepositoryInterface;
 use Flame\Database\Model;
 use think\Collection;
 

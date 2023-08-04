@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Schedulers;
 
-use App\Contracts\ScheduleTaskInterface;
+use Flame\Contracts\ScheduleTaskInterface;
 use Flame\Log\Log;
 use Throwable;
 
