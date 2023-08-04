@@ -5,10 +5,10 @@ return [
     'rewrite_on' => true,
     'rewrite_rule' => [
         '<app>/<c>/<a>' => '<app>/<c>/<a>',
-        '<c>/<a>' => 'index/<c>/<a>',
-        '<c>' => 'index/<c>/index',
+        '<app>/<c>' => '<app>/<c>/index',
+        '<app>' => '<app>/index/index',
     ],
-    'default_app' => 'Index',
+    'default_app' => 'Web',
     'default_controller' => 'Index',
     'default_action' => 'index',
 ];

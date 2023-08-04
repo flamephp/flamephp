@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Auth\Controllers;
 
 use App\Exceptions\CustomException;
 use Flame\Http\Response;

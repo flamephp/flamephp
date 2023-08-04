@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Auth\Requests\Login;
+namespace App\Http\Auth\Requests\Login;
 
 use Flame\Validator;
 use OpenApi\Attributes as OA;
