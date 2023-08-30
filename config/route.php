@@ -4,11 +4,13 @@ return [
     'context_path' => '/',
     'rewrite_on' => true,
     'rewrite_rule' => [
-        '<app>/<c>/<a>' => '<app>/<c>/<a>',
-        '<app>/<c>' => '<app>/<c>/index',
-        '<app>' => '<app>/index/index',
+        '<app>/<m>/<c>/<a>' => '<app>/<m>/<c>/<a>',
+        '<app>/<m>/<c>' => '<app>/<m>/<c>/index',
+        '<app>/<m>' => '<app>/<m>/index/index',
+        '<app>' => '<app>/index/index/index',
     ],
     'default_app' => 'Web',
+    'default_module' => 'index',
     'default_controller' => 'Index',
     'default_action' => 'index',
 ];

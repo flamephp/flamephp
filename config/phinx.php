@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 return [
     'paths' => [
-        'migrations' => base_path('database/migrations'),
+        'migrations' => [
+            base_path('database/migrations'),
+            app_path('Bundles/*/Migrations'),
+        ],
         'seeds' => base_path('database/seeders'),
     ],
     'environments' => [
