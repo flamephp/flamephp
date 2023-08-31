@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace App\Schedulers;
 
 use Flame\Contracts\ScheduleTaskInterface;
-use Flame\Log\Log;
-use Throwable;
+use Flame\Foundation\Attribute\ScheduledAttribute;
 
 class HelloTask implements ScheduleTaskInterface
 {

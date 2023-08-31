@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Repositories\UserRepository;
-use Focite\Contracts\ServiceInterface;
+use Flame\Contracts\ServiceInterface;
 
 class UserService extends CommonService implements ServiceInterface
 {

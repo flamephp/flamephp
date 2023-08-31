@@ -6,7 +6,7 @@ namespace App\Http\Manager\Controllers;
 
 use App\Exceptions\CustomException;
 use Flame\Http\Response;
-use Flame\Log\Log;
+use Flame\Support\Facade\Log;
 use Throwable;
 
 class IndexController extends BaseController

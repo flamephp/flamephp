@@ -16,6 +16,6 @@ class DatabaseSeeder extends AbstractSeed
      */
     public function run(): void
     {
-        
+
     }
 }

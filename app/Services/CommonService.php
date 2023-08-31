@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Exceptions\CustomException;
-use Focite\Contracts\CommonServiceInterface;
-use Focite\Contracts\CurdRepositoryInterface;
+use Flame\Contracts\CommonServiceInterface;
+use Flame\Contracts\CurdRepositoryInterface;
 
 /**
  * @method CurdRepositoryInterface getRepository()

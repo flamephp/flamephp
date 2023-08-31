@@ -8,5 +8,4 @@ use Flame\Routing\Controller;
 
 abstract class BaseController extends Controller
 {
-	
 }
