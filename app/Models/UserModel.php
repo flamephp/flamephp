@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-class UserModel extends CommonModel
+use Flame\Database\Model;
+
+class UserModel extends Model
 {
     /**
      * 设置表

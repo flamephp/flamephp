@@ -6,7 +6,8 @@ namespace App\Repositories;
 
 use App\Entities\User;
 use Exception;
-use Flame\Contracts\RepositoryInterface;
+use Flame\Database\Contracts\RepositoryInterface;
+use Flame\Database\Repositories\CurdRepository;
 use Flame\Database\Model;
 
 class UserRepository extends CurdRepository implements RepositoryInterface
