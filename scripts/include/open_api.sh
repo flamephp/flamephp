@@ -12,8 +12,8 @@ vendor/bin/openapi app/Http/Manager/ app/Entities/ \
 vendor/bin/openapi app/Http/User/ app/Entities/ \
   -o public/swagger/user.json -f json
 
-vendor/bin/openapi app/Http/Web/ app/Entities/ \
-  -o public/swagger/web.json -f json
+vendor/bin/openapi app/Http/Portal/ app/Entities/ \
+  -o public/swagger/portal.json -f json
 
 Echo_Green '------------------------------'
 Echo_Green ' 生成typescript接口'

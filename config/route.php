@@ -9,7 +9,7 @@ return [
         '<app>/<m>' => '<app>/<m>/index/index',
         '<app>' => '<app>/index/index/index',
     ],
-    'default_app' => 'Web',
+    'default_app' => 'Portal',
     'default_module' => 'index',
     'default_controller' => 'Index',
     'default_action' => 'index',

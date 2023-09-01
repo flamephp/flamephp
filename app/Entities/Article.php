@@ -7,28 +7,22 @@ namespace App\Entities;
 use Flame\Support\ArrayObject;
 use OpenApi\Attributes as OA;
 
-#[OA\Schema(schema: 'UserSchema')]
-class User
+#[OA\Schema(schema: 'ArticleSchema')]
+class Article
 {
     use ArrayObject;
 
     #[OA\Property(property: 'id', description: '', type: 'integer')]
     private int $id;
 
-    #[OA\Property(property: 'name', description: '昵称', type: 'string')]
-    private string $name;
+    #[OA\Property(property: 'title', description: '文章标题', type: 'string')]
+    private string $title;
 
-    #[OA\Property(property: 'avatar', description: '头像', type: 'string')]
-    private string $avatar;
+    #[OA\Property(property: 'image', description: '文章海报', type: 'string')]
+    private string $image;
 
-    #[OA\Property(property: 'birthday', description: '生日', type: 'string')]
-    private string $birthday;
-
-    #[OA\Property(property: 'mobile', description: '手机号码', type: 'string')]
-    private string $mobile;
-
-    #[OA\Property(property: 'mobile_verified_at', description: '手机号码验证时间', type: 'string')]
-    private string $mobileVerifiedAt;
+    #[OA\Property(property: 'content', description: '文章描述', type: 'string')]
+    private string $content;
 
     #[OA\Property(property: 'status', description: '状态（1正常，2禁用）', type: 'integer')]
     private int $status;
@@ -52,54 +46,34 @@ class User
         $this->id = $id;
     }
 
-    public function getName(): string
+    public function getTitle(): string
     {
-        return $this->name;
+        return $this->title;
     }
 
-    public function setName(string $name): void
+    public function setTitle(string $title): void
     {
-        $this->name = $name;
+        $this->title = $title;
     }
 
-    public function getAvatar(): string
+    public function getImage(): string
     {
-        return $this->avatar;
+        return $this->image;
     }
 
-    public function setAvatar(string $avatar): void
+    public function setImage(string $image): void
     {
-        $this->avatar = $avatar;
+        $this->image = $image;
     }
 
-    public function getBirthday(): string
+    public function getContent(): string
     {
-        return $this->birthday;
+        return $this->content;
     }
 
-    public function setBirthday(string $birthday): void
+    public function setContent(string $content): void
     {
-        $this->birthday = $birthday;
-    }
-
-    public function getMobile(): string
-    {
-        return $this->mobile;
-    }
-
-    public function setMobile(string $mobile): void
-    {
-        $this->mobile = $mobile;
-    }
-
-    public function getMobileVerifiedAt(): string
-    {
-        return $this->mobileVerifiedAt;
-    }
-
-    public function setMobileVerifiedAt(string $mobileVerifiedAt): void
-    {
-        $this->mobileVerifiedAt = $mobileVerifiedAt;
+        $this->content = $content;
     }
 
     public function getStatus(): int

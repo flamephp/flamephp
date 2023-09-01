@@ -1,5 +1,19 @@
 {
     "openapi": "3.0.0",
+    "info": {
+        "title": "API文档",
+        "description": "管理平台",
+        "contact": {
+            "name": "API Develop Team"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/",
+            "description": "开发环境"
+        }
+    ],
     "paths": {
         "/article/manager/create/index": {
             "post": {
@@ -134,6 +148,43 @@
                 },
                 "type": "object"
             },
+            "ArticleSchema": {
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string"
+                    },
+                    "image": {
+                        "description": "文章海报",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "文章描述",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "状态（1正常，2禁用）",
+                        "type": "integer"
+                    },
+                    "created_time": {
+                        "description": "创建时间",
+                        "type": "string"
+                    },
+                    "updated_time": {
+                        "description": "更新时间",
+                        "type": "string"
+                    },
+                    "deleted_time": {
+                        "description": "删除时间",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "UserSchema": {
                 "properties": {
                     "id": {
@@ -160,28 +211,20 @@
                         "description": "手机号码验证时间",
                         "type": "string"
                     },
-                    "password": {
-                        "description": "登录密码",
-                        "type": "string"
-                    },
                     "status": {
-                        "description": "状态:1正常;2禁用",
+                        "description": "状态（1正常，2禁用）",
                         "type": "integer"
                     },
-                    "remember_token": {
-                        "description": "",
+                    "created_time": {
+                        "description": "创建时间",
                         "type": "string"
                     },
-                    "created_at": {
-                        "description": "",
+                    "updated_time": {
+                        "description": "更新时间",
                         "type": "string"
                     },
-                    "updated_at": {
-                        "description": "",
-                        "type": "string"
-                    },
-                    "deleted_at": {
-                        "description": "",
+                    "deleted_time": {
+                        "description": "删除时间",
                         "type": "string"
                     }
                 },

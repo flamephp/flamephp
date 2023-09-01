@@ -7,14 +7,14 @@ namespace App\Models;
 use Flame\Database\Model;
 use think\model\concern\SoftDelete;
 
-class UserModel extends Model
+class ArticleModel extends Model
 {
     use SoftDelete;
 
     /**
      * 设置表
      */
-    protected $name = 'user';
+    protected $name = 'article';
 
     /**
      * 是否需要自动写入时间戳 如果设置为字符串 则表示时间字段的类型.
@@ -47,11 +47,9 @@ class UserModel extends Model
      */
     protected $field = [
         'id',
-        'name',
-        'avatar',
-        'birthday',
-        'mobile',
-        'mobile_verified_at',
+        'title',
+        'image',
+        'content',
         'status',
         'created_time',
         'updated_time',

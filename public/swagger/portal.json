@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API文档",
-        "description": "用户平台",
+        "description": "门户平台",
         "contact": {
             "name": "API Develop Team"
         },
@@ -15,13 +15,13 @@
         }
     ],
     "paths": {
-        "/user": {
+        "/portal": {
             "get": {
                 "tags": [
-                    "用户信息"
+                    "门户信息"
                 ],
-                "summary": "获取用户信息",
-                "operationId": "d2309f8eb884a2b99f56ace5ada183ba",
+                "summary": "获取门户信息",
+                "operationId": "7ac4bbf1a798a8716dd57eb5b20b9b18",
                 "responses": {
                     "200": {
                         "description": "OK"
