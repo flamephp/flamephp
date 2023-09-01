@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Auth\Requests\Login;
 
-use Flame\Validator;
+use Flame\Validation\Validator;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(
