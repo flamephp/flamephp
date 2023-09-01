@@ -1,0 +1,229 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/article/manager/create/index": {
+            "post": {
+                "tags": [
+                    "文章管理"
+                ],
+                "summary": "创建文章接口",
+                "operationId": "5c54accf75bc55851669c5afc81acf24",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ArticleCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ArticleResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/manager/user": {
+            "post": {
+                "tags": [
+                    "用户管理"
+                ],
+                "summary": "用户列表",
+                "operationId": "b9c71369a9403c466cd8f9ee002404d6",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "当前页码",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "每页分页数",
+                        "required": false,
+                        "example": 10
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserQueryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ArticleCreateRequest": {
+                "required": [
+                    "title"
+                ],
+                "properties": {
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "ArticleUpdateRequest": {
+                "required": [
+                    "id",
+                    "title"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "文章ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "ArticleResponse": {
+                "properties": {
+                    "id": {
+                        "description": "文章编号",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "UserSchema": {
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "昵称",
+                        "type": "string"
+                    },
+                    "avatar": {
+                        "description": "头像",
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "description": "生日",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "手机号码",
+                        "type": "string"
+                    },
+                    "mobile_verified_at": {
+                        "description": "手机号码验证时间",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "登录密码",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "状态:1正常;2禁用",
+                        "type": "integer"
+                    },
+                    "remember_token": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UserQueryRequest": {
+                "properties": {
+                    "name": {
+                        "description": "名称",
+                        "type": "string",
+                        "example": ""
+                    },
+                    "mobile": {
+                        "description": "手机号",
+                        "type": "string",
+                        "example": ""
+                    },
+                    "status": {
+                        "description": "状态",
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "UserResponse": {
+                "properties": {
+                    "id": {
+                        "description": "编号",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "员工姓名",
+                        "type": "string"
+                    },
+                    "avatar": {
+                        "description": "头像",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
