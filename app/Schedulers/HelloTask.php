@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Schedulers;
 
-use Flame\Contracts\ScheduleTaskInterface;
+use Flame\Console\Contracts\ScheduleTaskInterface;
 use Flame\Foundation\Attribute\ScheduledAttribute;
 
 class HelloTask implements ScheduleTaskInterface
