@@ -1,0 +1,345 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API文档",
+        "description": "管理平台",
+        "contact": {
+            "name": "API Develop Team"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/",
+            "description": "开发环境"
+        }
+    ],
+    "paths": {
+        "/article/manager/create/index": {
+            "post": {
+                "tags": [
+                    "文章管理"
+                ],
+                "summary": "创建文章接口",
+                "operationId": "5c54accf75bc55851669c5afc81acf24",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ArticleCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ArticleResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/manager/user/index": {
+            "post": {
+                "tags": [
+                    "用户管理"
+                ],
+                "summary": "用户列表",
+                "operationId": "e9adf200bfa569a0fa78582375a2f4c1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "当前页码",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "每页分页数",
+                        "required": false,
+                        "example": 10
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserQueryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/manager/user/create": {
+            "post": {
+                "tags": [
+                    "用户管理"
+                ],
+                "summary": "创建用户接口",
+                "operationId": "c7c7d5f87329411027dd1897d6680e9d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/manager": {
+            "post": {
+                "tags": [
+                    "控制台"
+                ],
+                "summary": "管理控制台",
+                "operationId": "51fd0b59d72e199dd205ddddbc533bcd",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ArticleCreateRequest": {
+                "required": [
+                    "title"
+                ],
+                "properties": {
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "ArticleUpdateRequest": {
+                "required": [
+                    "id",
+                    "title"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "文章ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "ArticleResponse": {
+                "properties": {
+                    "id": {
+                        "description": "文章编号",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "UserCreateRequest": {
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "名称",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "UserQueryRequest": {
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "名称",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "UserUpdateRequest": {
+                "required": [
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "用户ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "用户标题",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "UserResponse": {
+                "properties": {
+                    "id": {
+                        "description": "编号",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "名称",
+                        "type": "string",
+                        "example": "untitle"
+                    }
+                },
+                "type": "object"
+            },
+            "ArticleSchema": {
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string"
+                    },
+                    "image": {
+                        "description": "文章海报",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "文章描述",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "状态（1正常，2禁用）",
+                        "type": "integer"
+                    },
+                    "created_time": {
+                        "description": "创建时间",
+                        "type": "string"
+                    },
+                    "updated_time": {
+                        "description": "更新时间",
+                        "type": "string"
+                    },
+                    "deleted_time": {
+                        "description": "删除时间",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UserSchema": {
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "昵称",
+                        "type": "string"
+                    },
+                    "avatar": {
+                        "description": "头像",
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "description": "生日",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "手机号码",
+                        "type": "string"
+                    },
+                    "mobile_verified_at": {
+                        "description": "手机号码验证时间",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "状态（1正常，2禁用）",
+                        "type": "integer"
+                    },
+                    "created_time": {
+                        "description": "创建时间",
+                        "type": "string"
+                    },
+                    "updated_time": {
+                        "description": "更新时间",
+                        "type": "string"
+                    },
+                    "deleted_time": {
+                        "description": "删除时间",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

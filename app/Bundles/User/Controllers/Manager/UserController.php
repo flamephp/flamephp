@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Manager\Controllers;
+namespace App\Bundles\User\Controllers\Manager;
 
+use App\Bundles\User\Requests\UserCreateRequest;
+use App\Bundles\User\Requests\UserQueryRequest;
+use App\Bundles\User\Responses\UserResponse;
 use App\Exceptions\CustomException;
-use App\Http\Manager\Requests\User\UserQueryRequest;
-use App\Http\Manager\Responses\UserResponse;
+use App\Http\Manager\Controllers\BaseController;
 use App\Services\UserService;
 use Flame\Http\Response;
 use Flame\Support\Facade\Log;
@@ -15,7 +17,7 @@ use Throwable;
 
 class UserController extends BaseController
 {
-    #[OA\Post(path: '/manager/user', summary: '用户列表', security: [['bearerAuth' => []]], tags: ['用户管理'])]
+    #[OA\Post(path: '/user/manager/user/index', summary: '用户列表', security: [['bearerAuth' => []]], tags: ['用户管理'])]
     #[OA\Parameter(name: 'page', description: '当前页码', in: 'query', required: true, example: 1)]
     #[OA\Parameter(name: 'pageSize', description: '每页分页数', in: 'query', required: false, example: 10)]
     #[OA\RequestBody(required: true, content: new OA\JsonContent(ref: UserQueryRequest::class))]
@@ -65,6 +67,24 @@ class UserController extends BaseController
             Log::error($e);
 
             return $this->fail('发送错误');
+        }
+    }
+
+    #[OA\Post(path: '/user/manager/user/create', summary: '创建用户接口', tags: ['用户管理'])]
+    #[OA\RequestBody(required: true, content: new OA\JsonContent(ref: UserCreateRequest::class))]
+    #[OA\Response(response: 200, description: 'OK', content: new OA\JsonContent(ref: UserResponse::class))]
+    public function create(): Response
+    {
+        try {
+            $userService = new UserService();
+
+            return $this->success(__FILE__);
+        } catch (CustomException $e) {
+            return $this->fail($e->getMessage());
+        } catch (Throwable $e) {
+            Log::error($e);
+
+            return $this->fail($e->getMessage());
         }
     }
 }
