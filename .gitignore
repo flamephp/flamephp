@@ -1,6 +1,6 @@
 /.phpunit.cache
 /node_modules
-/public/admin
+/public/index.html
 /runtime/*.key
 /vendor
 .env

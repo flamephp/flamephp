@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'context_path' => '/',
+    'context_path' => '/api/',
     'rewrite_on' => true,
     'rewrite_rule' => [
         '<app>/<m>/<c>/<a>' => '<app>/<m>/<c>/<a>',

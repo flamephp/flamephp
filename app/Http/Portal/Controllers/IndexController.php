@@ -17,7 +17,7 @@ class IndexController extends BaseController
     public function index(): Response
     {
         try {
-            return view('welcome');
+            return view('index');
         } catch (CustomException $e) {
             return $this->fail($e->getMessage());
         } catch (Throwable $e) {

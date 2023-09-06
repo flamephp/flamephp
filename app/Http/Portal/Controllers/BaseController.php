@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Portal\Controllers;
 
+use Flame\Config\Config;
 use Flame\Routing\Controller;
 use OpenApi\Attributes as OA;
 use OpenApi\Attributes\Contact;
@@ -12,4 +13,8 @@ use OpenApi\Attributes\Contact;
 #[OA\Server(url: 'http://127.0.0.1:8000/', description: '开发环境')]
 abstract class BaseController extends Controller
 {
+    public function __construct()
+    {
+        Config::set('view.view_dir_name', 'public/themes/default/html');
+    }
 }
