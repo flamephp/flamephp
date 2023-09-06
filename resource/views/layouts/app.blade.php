@@ -6,6 +6,6 @@
     <title>Welcome</title>
 </head>
 <body>
-index page.
+@yield('content')
 </body>
 </html>

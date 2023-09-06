@@ -12,18 +12,10 @@ use Throwable;
 
 class IndexController extends BaseController
 {
-    #[OA\Get(path: '/portal', summary: '获取门户信息', tags: ['门户信息'])]
+    #[OA\Get(path: '/', summary: '获取门户信息', tags: ['门户信息'])]
     #[OA\Response(response: 200, description: 'OK')]
     public function index(): Response
     {
-        try {
-            return view('index');
-        } catch (CustomException $e) {
-            return $this->fail($e->getMessage());
-        } catch (Throwable $e) {
-            Log::error($e);
-
-            return $this->fail('发送错误');
-        }
+        return view('welcome');
     }
 }
