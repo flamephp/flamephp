@@ -6,13 +6,15 @@ vendor/bin/openapi app/Http/Auth/ app/Entities/ \
   -o public/swagger/auth.json -f json
 
 vendor/bin/openapi app/Http/Manager/ app/Entities/ \
-  app/Bundles/Article/Controllers/Manager/ app/Bundles/Article/Requests/ app/Bundles/Article/Responses/ \
+  $(Get_Bundles "Manager") \
   -o public/swagger/manager.json -f json
 
 vendor/bin/openapi app/Http/User/ app/Entities/ \
+  $(Get_Bundles "User") \
   -o public/swagger/user.json -f json
 
 vendor/bin/openapi app/Http/Portal/ app/Entities/ \
+  $(Get_Bundles "Portal") \
   -o public/swagger/portal.json -f json
 
 Echo_Green '------------------------------'
