@@ -6,10 +6,10 @@ namespace App\Http\Portal\Controllers;
 
 use Flame\Http\Response;
 
-class IndexController extends BaseController
+class CategoryController extends BaseController
 {
     public function index(): Response
     {
-        return view('welcome');
+        return view('category');
     }
 }
