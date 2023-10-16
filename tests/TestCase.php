@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use Flame\Config;
-use Flame\Facade\DB;
-use Flame\Support\Http;
 use Exception;
+use Flame\Config\Config;
+use Flame\Http\HttpClient;
+use Flame\Support\Facade\DB;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -26,7 +26,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected function get($url, $params = [], $opts = []): string
     {
-        return Http::getUrl($url, $params, $opts);
+        return HttpClient::getUrl($url, $params, $opts);
     }
 
     /**
@@ -34,6 +34,6 @@ abstract class TestCase extends BaseTestCase
      */
     protected function post($url, $data = [], $opts = []): string
     {
-        return Http::getUrl($url, $data, $opts);
+        return HttpClient::getUrl($url, $data, $opts);
     }
 }
