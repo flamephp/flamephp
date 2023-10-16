@@ -12,6 +12,6 @@ class Kernel extends BaseKernel
     {
         parent::__construct();
 
-        parent::registerCommands(app_path('Console/Commands/*Command.php'), 'App');
+        parent::registerCommands(glob(app_path('Console/Commands/*Command.php')));
     }
 }

@@ -9,8 +9,11 @@ use Flame\Foundation\Attribute\ScheduledAttribute;
 
 class HelloTask implements ScheduleTaskInterface
 {
-    //28号凌晨
-    #[ScheduledAttribute('0 0 0 28 * *')]
+    public function cron(): ?string
+    {
+        return '0 0 28 * *';
+    }
+
     public function handle(): void
     {
 
