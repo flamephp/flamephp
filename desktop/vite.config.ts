@@ -14,9 +14,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     build: {
-      outDir: 'public',
-      emptyOutDir: false,
-      copyPublicDir: false
+      copyPublicDir: false,
+      outDir: 'dist'
     },
     plugins: [
       vue(),
@@ -30,7 +29,7 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./resource/js', import.meta.url))
+        '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
     server: {
