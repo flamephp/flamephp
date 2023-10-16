@@ -8,7 +8,10 @@ return [
             base_path('database/migrations'),
             app_path('Bundles/*/Migrations'),
         ],
-        'seeds' => base_path('database/seeders'),
+        'seeds' => [
+            base_path('database/seeders'),
+            app_path('Bundles/*/Seeders'),
+        ],
     ],
     'environments' => [
         'default_migration_table' => 'migrations',
